@@ -56,28 +56,6 @@ export const weddingData = {
 
   events: [
     {
-      id: "haldi-sangeet",
-      title: "Carnival of Love",
-      subheading: "Phoolon Ki Haldi aur Sangeet",
-      date: "10 December 2026",
-      day: "Thursday",
-      time: "12:30 PM",
-      venue: "Regenta Central Klassik, Ludhiana",
-      locationUrl: "https://www.google.com/maps/place/Regenta+Central+Klassik/@30.892329,75.847686,17z/data=!3m1!4b1!4m9!3m8!1s0x391a83ac9b5502e1:0xaafaff64d33c6778!5m2!4m1!1i2!8m2!3d30.892329!4d75.847686!16s%2Fg%2F1tcztb95?hl=en-us&entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D",
-      image: "https://res.cloudinary.com/kvup9rzt/image/upload/v1789021472/ChatGPT_Image_Sep_10_2026_11_50_44_AM.webp",
-      video: "https://res.cloudinary.com/kvup9rzt/video/upload/v1788699389/Your_paragraph_text_2__1.mov"
-    },
-    {
-      id: "anand-karaj",
-      title: "Anand Karaj",
-      date: "11 December 2026",
-      day: "Friday",
-      time: "Morning — Time to be announced",
-      venue: "Gurdwara Sri Guru Singh Sabha, Sarabha Nagar, Ludhiana",
-      locationUrl: "https://maps.google.com?q=D-Block,%20Block%20D,%20Sarabha%20Nagar,%20Ludhiana,%20Punjab%20141001&ftid=0x391a83cd9cc9d721:0xcb058d24622ed52&entry=gps&shh=CAE&lucs=,100834231,121816459,94297699,94231188,94280568,47071704,94218641,94282134,100813469,94286869,100820247,100822499&g_st=ic",
-      video: "https://res.cloudinary.com/kvup9rzt/video/upload/v1788699375/Your_paragraph_text_2.mov"
-    },
-    {
       id: "reception",
       title: "Reception",
       date: "11 December 2026",
@@ -99,7 +77,7 @@ export const weddingData = {
     logo: "/assets/branding/logo.png",
     sticker: "/assets/branding/sticker.png",
     proposalVideoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    ogImage: "https://res.cloudinary.com/kvup9rzt/image/upload/v1789449673/ChatGPT_Image_Sep_14_2026_11_30_18_PM.webp",
+    ogImage: "https://res.cloudinary.com/kvup9rzt/image/upload/v1789449683/ChatGPT_Image_Sep_15_2026_12_27_22_AM.webp",
     favicon: "https://res.cloudinary.com/kvup9rzt/image/upload/v1788890221/tm_logo.png"
   },
 

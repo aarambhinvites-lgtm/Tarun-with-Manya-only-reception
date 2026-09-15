@@ -4,44 +4,6 @@ import { createScrollReveal } from '../utils/scrollReveal';
 import './Events.css';
 
 // ==============================
-// CARNIVAL OF LOVE
-// ==============================
-const haldiSangeet = {
-  title: "Carnival of Love",
-  subheading: (
-    <>
-      Phoolon Ki<br />Haldi aur Sangeet
-    </>
-  ),
-  date: "10 December 2026",
-  day: "Thursday",
-  time: "12:30 PM",
-  dressCode: "Festive Indian • Bright & Colourful",
-  venue: "Regenta Central Klassik, Ludhiana",
-  address: "",
-  locationButtonText: "EXPLORE VENUE",
-  backgroundImage: "https://res.cloudinary.com/kvup9rzt/image/upload/v1789021472/ChatGPT_Image_Sep_10_2026_11_50_44_AM.webp",
-  locationUrl: "https://www.google.com/maps/place/Regenta+Central+Klassik/@30.892329,75.847686,17z/data=!3m1!4b1!4m9!3m8!1s0x391a83ac9b5502e1:0xaafaff64d33c6778!5m2!4m1!1i2!8m2!3d30.892329!4d75.847686!16s%2Fg%2F1tcztb95?hl=en-us&entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
-};
-
-// ==============================
-// ANAND KARAJ
-// ==============================
-const anandKaraj = {
-  title: "Anand Karaj",
-  subheading: "One light, two forms",
-  date: "11 December 2026",
-  day: "Friday",
-  time: "10:00 AM",
-  dressCode: "Traditional Indian • Pastels encouraged",
-  venue: "Gurdwara Sri Guru Singh Sabha",
-  address: "Sarabha Nagar, Ludhiana",
-  locationButtonText: "EXPLORE VENUE",
-  backgroundImage: "https://res.cloudinary.com/kvup9rzt/image/upload/v1788860630/ChatGPT_Image_Sep_8_2026_01_27_02_PM.webp",
-  locationUrl: "https://maps.google.com?q=D-Block,%20Block%20D,%20Sarabha%20Nagar,%20Ludhiana,%20Punjab%20141001&ftid=0x391a83cd9cc9d721:0xcb058d24622ed52&entry=gps&shh=CAE&lucs=,100834231,121816459,94297699,94231188,94280568,47071704,94218641,94282134,100813469,94286869,100820247,100822499&g_st=ic"
-};
-
-// ==============================
 // RECEPTION
 // ==============================
 const reception = {
@@ -148,7 +110,7 @@ const Events = () => {
       });
     });
 
-    // 2. Each Event Card + Inner Text Elements
+    // 2. Event Card + Inner Text Elements
     const cleanups = [];
     cardsRef.current.forEach((card) => {
       if (!card) return;
@@ -194,24 +156,14 @@ const Events = () => {
     <section className="events-section section-padding" ref={containerRef}>
       <div className="container">
         <div className="events-intro">
-          <h2 className="cursive-text events-title">The Celebrations</h2>
+          <h2 className="cursive-text events-title">The Celebration</h2>
         </div>
 
         <div className="events-list">
           <EventCard 
-            config={haldiSangeet} 
-            className="event--haldi-sangeet" 
-            cardRef={el => cardsRef.current[0] = el} 
-          />
-          <EventCard 
-            config={anandKaraj} 
-            className="event--anand-karaj" 
-            cardRef={el => cardsRef.current[1] = el} 
-          />
-          <EventCard 
             config={reception} 
             className="event--reception" 
-            cardRef={el => cardsRef.current[2] = el} 
+            cardRef={el => cardsRef.current[0] = el} 
           />
         </div>
       </div>

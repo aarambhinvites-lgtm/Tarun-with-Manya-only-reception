@@ -112,7 +112,11 @@ const RSVP = () => {
     }
 
     if (!formData.notAttending && formData.events.length === 0) {
-      setError('Please select at least one event or let us know if you cannot attend.');
+      setError(
+        weddingData.events.length > 1
+          ? 'Please select at least one event or let us know if you cannot attend.'
+          : 'Please select whether you will be attending the Reception or let us know if you cannot attend.'
+      );
       return;
     }
 
@@ -228,7 +232,9 @@ const RSVP = () => {
                 )}
 
                 <div className={styles.inputGroup}>
-                  <label className={styles.label}>Events Attending</label>
+                  <label className={styles.label}>
+                    {weddingData.events.length > 1 ? 'Events Attending' : 'Event Attending'}
+                  </label>
                   <div className={styles.eventsList}>
                     {weddingData.events.map(event => (
                       <label key={event.id} className={styles.checkboxLabel}>
