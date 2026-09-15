@@ -1,0 +1,259 @@
+.petalsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  perspective: 800px;
+  contain: strict;
+  container-type: size;
+}
+
+.petal {
+  position: absolute;
+  top: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  animation-iteration-count: infinite;
+}
+
+.driftLeft1 {
+  animation-name: driftLeft1;
+}
+
+.driftLeft2 {
+  animation-name: driftLeft2;
+}
+
+.driftLeft3 {
+  animation-name: driftLeft3;
+}
+
+.driftRight1 {
+  animation-name: driftRight1;
+}
+
+.driftRight2 {
+  animation-name: driftRight2;
+}
+
+.driftRight3 {
+  animation-name: driftRight3;
+}
+
+/* =========================================================
+   SUBTLE SIDE-ONLY INWARD DRIFT KEYFRAMES (100% GPU)
+   Central story text remains 100% clear.
+   ========================================================= */
+
+/* Left 1: Soft entry, gentle inward drift (+16px), slow descent, fade near bottom */
+@keyframes driftLeft1 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  32% {
+    transform: translate3d(16px, 32vh, 0) rotate(22deg) rotateY(18deg);
+    transform: translate3d(16px, 32cqh, 0) rotate(22deg) rotateY(18deg);
+  }
+  58% {
+    transform: translate3d(8px, 58vh, 0) rotate(12deg) rotateY(-12deg);
+    transform: translate3d(8px, 58cqh, 0) rotate(12deg) rotateY(-12deg);
+    opacity: 0.9;
+  }
+  78% {
+    transform: translate3d(18px, 80vh, 0) rotate(28deg) rotateY(20deg);
+    transform: translate3d(18px, 80cqh, 0) rotate(28deg) rotateY(20deg);
+    opacity: 0.5;
+  }
+  92% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate3d(10px, 105vh, 0) rotate(38deg) rotateY(10deg);
+    transform: translate3d(10px, 105cqh, 0) rotate(38deg) rotateY(10deg);
+    opacity: 0;
+  }
+}
+
+/* Left 2: Subtle inward wave (+12px to +20px) */
+@keyframes driftLeft2 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
+  35% {
+    transform: translate3d(20px, 35vh, 0) rotate(-18deg) rotateY(-15deg);
+    transform: translate3d(20px, 35cqh, 0) rotate(-18deg) rotateY(-15deg);
+  }
+  62% {
+    transform: translate3d(10px, 62vh, 0) rotate(14deg) rotateY(16deg);
+    transform: translate3d(10px, 62cqh, 0) rotate(14deg) rotateY(16deg);
+    opacity: 0.85;
+  }
+  80% {
+    transform: translate3d(16px, 82vh, 0) rotate(-10deg) rotateY(-10deg);
+    transform: translate3d(16px, 82cqh, 0) rotate(-10deg) rotateY(-10deg);
+    opacity: 0.45;
+  }
+  92% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translate3d(6px, 105vh, 0) rotate(18deg) rotateY(0deg);
+    transform: translate3d(6px, 105cqh, 0) rotate(18deg) rotateY(0deg);
+    opacity: 0;
+  }
+}
+
+/* Left 3: Meandering gentle inward float (+8px to +18px) */
+@keyframes driftLeft3 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    transform: translate3d(14px, 28vh, 0) rotate(20deg) rotateY(22deg);
+    transform: translate3d(14px, 28cqh, 0) rotate(20deg) rotateY(22deg);
+  }
+  54% {
+    transform: translate3d(6px, 54vh, 0) rotate(-12deg) rotateY(-18deg);
+    transform: translate3d(6px, 54cqh, 0) rotate(-12deg) rotateY(-18deg);
+    opacity: 0.9;
+  }
+  76% {
+    transform: translate3d(18px, 78vh, 0) rotate(26deg) rotateY(16deg);
+    transform: translate3d(18px, 78cqh, 0) rotate(26deg) rotateY(16deg);
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate3d(8px, 105vh, 0) rotate(32deg) rotateY(6deg);
+    transform: translate3d(8px, 105cqh, 0) rotate(32deg) rotateY(6deg);
+    opacity: 0;
+  }
+}
+
+/* Right 1: Soft entry, gentle inward drift (-16px), slow descent, fade near bottom */
+@keyframes driftRight1 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  32% {
+    transform: translate3d(-16px, 32vh, 0) rotate(-22deg) rotateY(-18deg);
+    transform: translate3d(-16px, 32cqh, 0) rotate(-22deg) rotateY(-18deg);
+  }
+  58% {
+    transform: translate3d(-8px, 58vh, 0) rotate(-12deg) rotateY(12deg);
+    transform: translate3d(-8px, 58cqh, 0) rotate(-12deg) rotateY(12deg);
+    opacity: 0.9;
+  }
+  78% {
+    transform: translate3d(-18px, 80vh, 0) rotate(-28deg) rotateY(-20deg);
+    transform: translate3d(-18px, 80cqh, 0) rotate(-28deg) rotateY(-20deg);
+    opacity: 0.5;
+  }
+  92% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate3d(-10px, 105vh, 0) rotate(-38deg) rotateY(-10deg);
+    transform: translate3d(-10px, 105cqh, 0) rotate(-38deg) rotateY(-10deg);
+    opacity: 0;
+  }
+}
+
+/* Right 2: Subtle inward wave (-12px to -20px) */
+@keyframes driftRight2 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
+  35% {
+    transform: translate3d(-20px, 35vh, 0) rotate(18deg) rotateY(15deg);
+    transform: translate3d(-20px, 35cqh, 0) rotate(18deg) rotateY(15deg);
+  }
+  62% {
+    transform: translate3d(-10px, 62vh, 0) rotate(-14deg) rotateY(-16deg);
+    transform: translate3d(-10px, 62cqh, 0) rotate(-14deg) rotateY(-16deg);
+    opacity: 0.85;
+  }
+  80% {
+    transform: translate3d(-16px, 82vh, 0) rotate(10deg) rotateY(10deg);
+    transform: translate3d(-16px, 82cqh, 0) rotate(10deg) rotateY(10deg);
+    opacity: 0.45;
+  }
+  92% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translate3d(-6px, 105vh, 0) rotate(-18deg) rotateY(0deg);
+    transform: translate3d(-6px, 105cqh, 0) rotate(-18deg) rotateY(0deg);
+    opacity: 0;
+  }
+}
+
+/* Right 3: Meandering gentle inward float (-8px to -18px) */
+@keyframes driftRight3 {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    transform: translate3d(-14px, 28vh, 0) rotate(-20deg) rotateY(-22deg);
+    transform: translate3d(-14px, 28cqh, 0) rotate(-20deg) rotateY(-22deg);
+  }
+  54% {
+    transform: translate3d(-6px, 54vh, 0) rotate(12deg) rotateY(18deg);
+    transform: translate3d(-6px, 54cqh, 0) rotate(12deg) rotateY(18deg);
+    opacity: 0.9;
+  }
+  76% {
+    transform: translate3d(-18px, 78vh, 0) rotate(-26deg) rotateY(-16deg);
+    transform: translate3d(-18px, 78cqh, 0) rotate(-26deg) rotateY(-16deg);
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate3d(-8px, 105vh, 0) rotate(-32deg) rotateY(-6deg);
+    transform: translate3d(-8px, 105cqh, 0) rotate(-32deg) rotateY(-6deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petalsContainer {
+    display: none !important;
+  }
+}

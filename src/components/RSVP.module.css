@@ -1,0 +1,226 @@
+.rsvpSection {}
+
+.rsvpCard {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 163, 91, 0.28);
+  box-shadow: 0 16px 40px rgba(180, 140, 120, 0.08);
+  padding: var(--space-xl) var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.decorativeIcon {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: clamp(120px, 15vw, 200px);
+  aspect-ratio: 1896 / 830;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: var(--color-dusty-rose);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--color-text-main);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-taupe);
+}
+
+.input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(201, 163, 91, 0.5);
+  background: transparent;
+  color: var(--color-text-main);
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom-color: var(--color-gold);
+}
+
+.input::placeholder {
+  color: rgba(102, 102, 102, 0.4);
+}
+
+.guestCounter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.counterBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-light);
+  background: transparent;
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.counterBtn:hover {
+  background: var(--color-ivory-soft);
+}
+
+.counterValue {
+  font-size: 1.5rem;
+  width: 20px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-gold-light);
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked + .customCheckbox {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.checkbox:checked + .customCheckbox::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.eventName {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+
+.submitBtn {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  background-color: var(--color-dusty-rose);
+  color: var(--color-ivory);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #8c6262;
+}
+
+.submitBtn:disabled {
+  background-color: var(--color-sage);
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--color-mauve);
+  font-size: 0.9rem;
+  background-color: rgba(155, 115, 120, 0.1);
+  padding: 0.8rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.successState {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.successTitle {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: var(--color-dusty-rose);
+  margin-bottom: 1rem;
+}
+
+.successText {
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .rsvpCard {
+    padding: var(--space-lg) 1rem;
+  }
+}
+
+

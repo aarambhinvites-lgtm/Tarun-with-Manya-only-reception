@@ -1,0 +1,378 @@
+/* ── Section wrapper ────────────────────────────────────────────────── */
+.messagesSection {}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+.intro {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.decorativeIcon {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: clamp(120px, 15vw, 200px);
+  aspect-ratio: 1879 / 837;
+  height: auto;
+  object-fit: contain;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--color-sage);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: var(--color-dusty-rose);
+}
+
+/* ── Form ────────────────────────────────────────────────────────────── */
+.messageForm {
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input,
+.textarea {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  padding: 1rem;
+  border: 1px solid rgba(201, 163, 91, 0.3);
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-text-main);
+  border-radius: 6px;
+  resize: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.textareaWrapper {
+  width: 100%;
+}
+
+.charCounter {
+  text-align: right;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+  margin-top: 0.35rem;
+  padding-right: 0.25rem;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.submitBtn {
+  background-color: var(--color-dusty-rose);
+  color: var(--color-ivory);
+  padding: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.submitBtn:hover {
+  background-color: #8c6262;
+}
+
+.submitError {
+  color: var(--color-dusty-rose);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ── Empty State ─────────────────────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+  opacity: 0.6;
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: var(--color-dusty-rose);
+  opacity: 0.5;
+}
+
+.emptyText {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  letter-spacing: 0.5px;
+}
+
+/* ── Carousel Wrapper ─────────────────────────────────────────────────── */
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden; /* clips side-cards cleanly */
+  padding-bottom: 0.5rem;
+}
+
+/* ── Card Stage ──────────────────────────────────────────────────────── */
+/*
+  The stage uses a perspective-like layered layout.
+  Cards are absolutely positioned relative to the stage center
+  using CSS custom properties per role (--x, --scale, --opacity, --z).
+  Transitions are driven entirely by CSS so no JS layout thrash occurs.
+*/
+.cardStage {
+  position: relative;
+  width: 100%;
+  /* Height auto-sizes to the tallest card. We set a min-height so
+     the stage never collapses when cards are small. */
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y; /* allow vertical page scroll; horizontal captured by JS */
+  user-select: none;
+}
+
+/* ── Individual Card ─────────────────────────────────────────────────── */
+.card {
+  position: absolute;
+  /* Sensible card width — clamped so it's readable on mobile */
+  width: clamp(240px, 70vw, 380px);
+  min-height: 200px;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-image: url("/paper-grain.png");
+  background-repeat: repeat;
+  box-shadow: 0 10px 30px rgba(180, 140, 120, 0.09);
+  border: 1px solid rgba(201, 163, 91, 0.2);
+  border-radius: 12px;
+  transform: translateZ(0);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  /* All visual changes animate smoothly */
+  transition:
+    transform      0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity        0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow     0.55s cubic-bezier(0.25, 1, 0.5, 1);
+
+  will-change: transform, opacity;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ── Card roles ──────────────────────────────────────────────────────── */
+/* MAIN — centered, full size, fully visible */
+.card--main {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 4px 10px 40px rgba(0, 0, 0, 0.12);
+  pointer-events: auto;
+  cursor: default;
+}
+
+/* PREV — one card to the left, partially visible */
+.card--prev {
+  transform: translateX(-62%) scale(0.78);
+  opacity: 0.55;
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* NEXT — one card to the right, partially visible */
+.card--next {
+  transform: translateX(62%) scale(0.78);
+  opacity: 0.55;
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* FAR cards — almost off-screen */
+.card--far-prev {
+  transform: translateX(-95%) scale(0.65);
+  opacity: 0.2;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card--far-next {
+  transform: translateX(95%) scale(0.65);
+  opacity: 0.2;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Entrance animation for brand-new card ───────────────────────────── */
+@keyframes cardDrop {
+  from {
+    transform: translateX(0) scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.cardEntrance {
+  animation: cardDrop 0.55s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ── Card text ───────────────────────────────────────────────────────── */
+.messageText {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.25rem 0.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--color-text-main);
+  text-align: left;
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  overflow: hidden;
+}
+
+.messageName {
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  color: var(--color-dusty-rose);
+  text-align: right;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* ── Swipe hint ──────────────────────────────────────────────────────── */
+.swipeCue {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: var(--color-sage);
+  opacity: 0.75;
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+/* ── Controls row ────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navBtn {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-dusty-rose);
+  opacity: 0.85;
+  line-height: 1;
+  padding: 0 0.25rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.navBtn:hover:not(:disabled) {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.navBtn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.counter {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: var(--color-dusty-rose);
+  font-weight: 500;
+  min-width: 5ch;
+  text-align: center;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────────────────── */
+
+/* Mobile — make side-cards peek just a little */
+@media (max-width: 480px) {
+  .card {
+    width: clamp(220px, 78vw, 300px);
+  }
+  .card--prev {
+    transform: translateX(-58%) scale(0.75);
+  }
+  .card--next {
+    transform: translateX(58%) scale(0.75);
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+  .card {
+    width: clamp(260px, 65vw, 360px);
+  }
+}
+
+/* Desktop — larger peek effect */
+@media (min-width: 768px) {
+  .card {
+    width: 380px;
+  }
+  .cardStage {
+    min-height: 240px;
+  }
+  .card--prev {
+    transform: translateX(-68%) scale(0.8);
+  }
+  .card--next {
+    transform: translateX(68%) scale(0.8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card--prev {
+    transform: translateX(-72%) scale(0.82);
+    opacity: 0.6;
+  }
+  .card--next {
+    transform: translateX(72%) scale(0.82);
+    opacity: 0.6;
+  }
+}

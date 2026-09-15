@@ -1,0 +1,124 @@
+.proposalSection {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--section-gap-half) 0;
+}
+
+.intro {
+  padding: 0 var(--space-sm);
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: var(--space-md);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--color-taupe);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-dusty-rose);
+}
+
+.decorativeBorderTop {
+  display: block;
+  margin: 0 auto var(--space-sm) auto;
+  width: 75%;
+  max-width: 350px;
+  aspect-ratio: 960 / 90;
+  height: auto;
+  object-fit: contain;
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto var(--space-md) auto;
+  padding: 0 var(--space-sm);
+  display: flex;
+  justify-content: center;
+}
+
+.proposalVideo {
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.galleryContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.swiperContainer {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.customPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  z-index: 10;
+}
+
+.customPagination :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-dusty-rose);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.customPagination :global(.swiper-pagination-bullet-active) {
+  opacity: 1;
+  background-color: var(--color-dusty-rose);
+  transform: scale(1.2);
+}
+
+.swiperSlide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swiperSlide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .swiperSlide {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+

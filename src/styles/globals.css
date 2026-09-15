@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+@font-face {
+  font-family: 'Miracle History';
+  src: url('/fonts/Miracle History.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-ivory: #F8F4EC;
+  --color-ivory-soft: #FBF9F4;
+  --color-dusty-rose: #9C3D3D; /* original #8C5757 */
+  --color-mauve: #8A4B53; /* original #7F585D, slightly increased intensity to match */
+  --color-sage: #AAB7A3;
+  --color-blush: #E8CECA;
+  --color-peach: #EBD4C8;
+  --color-gold: #C9A35B;
+  --color-gold-light: #BFA06A;
+  --color-gold-dark: #8C6A28;
+  --color-taupe: #66575A;
+  
+  --color-text-main: var(--color-taupe);
+  --color-text-light: #8A7B7E;
+  
+  --font-cursive: 'Miracle History', 'Pinyon Script', 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  
+  --section-spacing: clamp(60px, 7vw, 100px);
+  --section-gap-half: calc(var(--section-spacing) / 2);
+
+  --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+html {
+  background-color: #FAF3E7;
+  font-size: 16px;
+  scroll-behavior: auto !important;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
+}
+
+body, #root {
+  background-color: transparent !important;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  color: var(--color-text-main);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global seamless living mixed pastel canvas background */
+.global-bg {
+  position: fixed;
+  top: -10vh;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  min-height: 120lvh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background-color: #FAF3E7;
+  background: linear-gradient(
+    140deg,
+    #D2DFEC 0%,
+    #DEEAE3 20%,
+    #FAF3E7 42%,
+    #F9EFE0 60%,
+    #F8E4D3 80%,
+    #F2D7C8 100%
+  );
+}
+
+.global-bg-canvas {
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  width: 130%;
+  height: 130%;
+  pointer-events: none;
+  background: linear-gradient(
+    140deg,
+    #D2DFEC 0%,
+    #DEEAE3 20%,
+    #FAF3E7 42%,
+    #F9EFE0 60%,
+    #F8E4D3 80%,
+    #F2D7C8 100%
+  );
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: pastelCanvasShift 32s ease-in-out infinite alternate;
+}
+
+@keyframes pastelCanvasShift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, -3%, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(3%, -5%, 0) scale(1.02);
+  }
+}
+
+/* Floating organic mixed pastel gradient orbs */
+.pastel-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  filter: blur(55px);
+}
+
+/* Orb 1: Ethereal misty sky blue / cool pearl cloud (top-left) */
+.orb-1 {
+  width: clamp(380px, 65vw, 900px);
+  height: clamp(380px, 65vw, 900px);
+  top: -12%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(200, 222, 240, 0.95) 0%, rgba(215, 232, 245, 0.65) 35%, rgba(215, 232, 245, 0.25) 60%, transparent 80%);
+  animation: pastelFloat1 24s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+/* Orb 2: Warm sunlit champagne & ivory cream (top-right / center) */
+.orb-2 {
+  width: clamp(360px, 60vw, 850px);
+  height: clamp(360px, 60vw, 850px);
+  top: 15%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(254, 244, 220, 0.95) 0%, rgba(250, 238, 210, 0.7) 35%, rgba(250, 238, 210, 0.25) 60%, transparent 80%);
+  animation: pastelFloat2 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+/* Orb 3: Soft pastel botanical sage & morning mist (bottom-left / mid) */
+.orb-3 {
+  width: clamp(340px, 55vw, 800px);
+  height: clamp(340px, 55vw, 800px);
+  bottom: 10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(212, 232, 216, 0.9) 0%, rgba(225, 240, 228, 0.6) 35%, rgba(225, 240, 228, 0.2) 60%, transparent 80%);
+  animation: pastelFloat3 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+/* Orb 4: Subtle warm apricot sunset glow (bottom-right) */
+.orb-4 {
+  width: clamp(320px, 50vw, 750px);
+  height: clamp(320px, 50vw, 750px);
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(248, 218, 196, 0.85) 0%, rgba(246, 226, 210, 0.55) 35%, rgba(246, 226, 210, 0.2) 60%, transparent 80%);
+  animation: pastelFloat4 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+@keyframes pastelFloat1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8vw, 10vh, 0) scale(1.12) rotate(4deg);
+  }
+  100% {
+    transform: translate3d(14vw, 4vh, 0) scale(0.96) rotate(-3deg);
+  }
+}
+
+@keyframes pastelFloat2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-10vw, -8vh, 0) scale(1.15) rotate(-5deg);
+  }
+  100% {
+    transform: translate3d(-6vw, -14vh, 0) scale(0.95) rotate(3deg);
+  }
+}
+
+@keyframes pastelFloat3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-12vw, 12vh, 0) scale(1.18);
+  }
+  100% {
+    transform: translate3d(-5vw, -8vh, 0) scale(0.92);
+  }
+}
+
+@keyframes pastelFloat4 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10vw, -10vh, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(5vw, 6vh, 0) scale(0.95);
+  }
+}
+
+/* Texture overlay for luxury feel */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background-image: url("/paper-grain.png");
+  background-repeat: repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility classes */
+.cursive-text {
+  font-family: var(--font-cursive);
+  font-weight: normal;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-dusty-rose {
+  color: var(--color-dusty-rose);
+}
+
+.text-mauve {
+  color: var(--color-mauve);
+}
+
+.section-padding {
+  padding: var(--section-gap-half) var(--space-sm);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: var(--section-gap-half) var(--space-md);
+  }
+}
+
+

@@ -1,0 +1,146 @@
+.invitationSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--section-gap-half) !important;
+  padding-bottom: var(--section-gap-half) !important;
+}
+
+.card {
+  padding: 1rem;
+  padding-bottom: 0;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.innerBorder {
+  border: none;
+  padding: var(--space-xl) var(--space-md) var(--space-sm) var(--space-md);
+  text-align: center;
+}
+
+.togetherText {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 2vw, 0.82rem);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-text-light);
+  margin-bottom: 0.85rem;
+}
+
+.cordialInvite {
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  color: var(--color-dusty-rose);
+  margin-bottom: 0.85rem;
+  line-height: 1.15;
+}
+
+.inviteText {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.groomSection {
+  margin-bottom: 0.75rem;
+}
+
+.brideSection {
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  color: var(--color-dusty-rose);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.relation {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-light);
+  margin-bottom: 0.55rem;
+}
+
+.parents {
+  color: var(--color-gold-dark, #8C6A28);
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  line-height: 1.4;
+}
+
+.ampersand {
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  color: var(--color-dusty-rose);
+  margin: 0.75rem 0 1.25rem 0;
+  line-height: 1;
+}
+
+.ornamentTop {
+  width: 80%;
+  max-width: 300px;
+  aspect-ratio: 2170 / 725;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+.ornamentBottom {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .innerBorder {
+    padding: var(--space-md) var(--space-xs) 0 var(--space-xs);
+  }
+  
+  .ornamentTop {
+    margin-bottom: 1.25rem;
+  }
+
+  .togetherText {
+    margin-bottom: 0.75rem;
+  }
+
+  .cordialInvite {
+    font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+    white-space: normal;
+    margin-bottom: 0.75rem;
+  }
+
+  .inviteText {
+    margin-bottom: 1.5rem;
+  }
+
+  .groomSection {
+    margin-bottom: 0.5rem;
+  }
+
+  .name {
+    margin-bottom: 0.65rem;
+  }
+
+  .relation {
+    margin-bottom: 0.5rem;
+  }
+
+  .parents {
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .ampersand {
+    margin: 0.65rem 0 1rem 0;
+  }
+
+  .brideSection {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,158 @@
+.countdownSection {
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: var(--space-xl);
+}
+
+.decorativeIcon {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: clamp(120px, 15vw, 200px);
+  aspect-ratio: 1991 / 789;
+  height: auto;
+  object-fit: contain;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--color-taupe);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-dusty-rose);
+}
+
+.frameWrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.frameContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1904 / 826;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1904 / 826;
+  display: block;
+  object-fit: contain;
+}
+
+.timerGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  /* Increased padding to give more space from the frame sides */
+  padding: 0 16%;
+  box-sizing: border-box;
+}
+
+.timerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: unset;
+}
+
+.number {
+  /* Slightly reduced font size to fit well with increased padding */
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-family: "Times New Roman", Times, serif;
+  color: var(--color-mauve);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: var(--color-gold-light);
+}
+
+.completedState {
+  padding: var(--space-xl) 0;
+}
+
+.completedText {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-mauve);
+  animation: fadeUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    /* ADJUST THIS VALUE to change the gap between "Countdown to Forever" and the frame */
+    margin-bottom: 2rem;
+  }
+  .frameWrapper {
+    /* ADJUST THIS VALUE to increase/decrease frame size on mobile (e.g., scale(1.1) for 10% larger, scale(1.2) for 20% larger) */
+    transform: scale(1.15);
+    /* padding: 0 to give it maximum space before scaling */
+    padding: 0;
+  }
+  .timerGrid {
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    /* Increased padding to give more space from the frame sides */
+    padding: 0 16%;
+  }
+  .divider {
+    display: block;
+    height: 30px;
+    margin: 0 2px;
+  }
+  .timerBox {
+    width: auto;
+    min-width: unset;
+    flex: 1;
+  }
+  .number {
+    /* Slightly reduced font size */
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+  .label {
+    font-size: clamp(0.35rem, 1.5vw, 0.6rem);
+    letter-spacing: 0.5px;
+  }
+}
+
+
+

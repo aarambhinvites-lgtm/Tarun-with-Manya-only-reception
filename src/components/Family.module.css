@@ -1,0 +1,98 @@
+.familySection {text-align: center;
+}
+
+.intro {
+  margin-bottom: var(--space-xl);
+}
+
+.decorativeIcon {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: clamp(120px, 15vw, 200px);
+  aspect-ratio: 1991 / 789;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: var(--color-dusty-rose);
+  margin-bottom: 1rem;
+}
+
+.ornament {
+  color: var(--color-gold);
+  font-size: 1.5rem;
+}
+
+.familiesContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.familyBlock {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.sideTitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-mauve);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(201, 163, 91, 0.3); /* champagne gold with opacity */
+}
+
+.memberGroup {
+  margin-bottom: 1.5rem;
+}
+
+.familyBlock .memberGroup:last-child {
+  margin-bottom: 0;
+}
+
+.relation {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.names {
+  font-size: 1.15rem;
+  color: var(--color-text-main);
+}
+
+.divider {
+  width: 1px;
+  background-color: rgba(201, 163, 91, 0.3);
+  margin: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .familiesContainer {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .divider {
+    width: 80px;
+    height: 1px;
+    margin: 0.25rem auto;
+  }
+
+  .sideTitle {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+

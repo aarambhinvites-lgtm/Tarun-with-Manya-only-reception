@@ -1,0 +1,173 @@
+.ourStory {
+  /* ========================================================= */
+  /* ADJUST GAPS HERE: Change these values to adjust spacing   */
+  /* Example: 1.5rem is roughly 1 line of gap.                 */
+  /* ========================================================= */
+  --gap-after-header: 2.5rem;        /* Gap between "Our Story" and the first chapter */
+  --gap-between-paragraphs: 1.5rem;  /* Gap between paragraphs in same section */
+  --gap-between-chapters: 3.5rem;    /* Adjust gap between story chapters */
+  --gap-around-cinematic: 1.5rem;    /* Adjust gap above/below "Manya said Yes!" */
+  --gap-before-ending: 3rem;         /* Adjust gap before "Manya & Tarun" */
+  /* ========================================================= */
+  padding-top: var(--section-spacing) !important;
+  padding-bottom: var(--section-gap-half) !important;
+  position: relative;
+  text-align: center;
+}
+
+.floralContainer {
+  margin-bottom: -4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.floralTop {
+  width: 100%;
+  max-width: 380px; /* Increased size */
+  aspect-ratio: 1000 / 561;
+  height: auto;
+  display: block;
+}
+
+.header {
+  margin-bottom: var(--gap-after-header);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--color-sage);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--color-dusty-rose);
+}
+
+.storyContent {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter {
+  margin-bottom: var(--gap-between-chapters);
+}
+
+.chapter:last-of-type {
+  margin-bottom: 0;
+}
+
+.chapterHeading {
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  color: var(--color-mauve);
+  margin-bottom: 1rem;
+  opacity: 0;
+}
+
+.paragraph {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--color-text-main);
+  opacity: 0; 
+  margin-bottom: var(--gap-between-paragraphs);
+  text-wrap: pretty;
+}
+
+.chapter:first-child .paragraph:first-of-type {
+  margin-bottom: 0.2rem;
+}
+
+.cinematicMoment {
+  margin: var(--gap-around-cinematic) 0;
+}
+
+.cinematicLine1, .cinematicLine2, .cinematicLine3 {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  line-height: 1.8;
+  color: var(--color-text-main);
+  opacity: 0;
+  margin-bottom: var(--gap-between-paragraphs);
+  text-wrap: pretty;
+}
+
+.cinematicYes {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--color-dusty-rose);
+  margin-top: 1.5rem;
+  opacity: 0;
+}
+
+.storyEnding {
+  margin-top: var(--gap-before-ending);
+}
+
+.endingNames {
+  font-size: clamp(3rem, 7vw, 4rem);
+  color: var(--color-dusty-rose);
+  opacity: 0;
+  margin-bottom: 0.5rem;
+}
+
+.endingDetails {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--color-sage);
+  text-transform: uppercase;
+  opacity: 0;
+  margin-bottom: var(--space-xs);
+}
+
+.scrollIndicatorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.endingTransition {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  font-style: italic;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+  text-wrap: pretty;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--color-sage), transparent);
+}
+
+@media (max-width: 768px) {
+  .ourStory {
+    /* ========================================================= */
+    /* ADJUST MOBILE GAPS HERE: Change these values for phones   */
+    /* ========================================================= */
+    --gap-after-header: 1.5rem;
+    --gap-between-paragraphs: 0.7rem;
+    --gap-between-chapters: 2.0rem;     /* Smaller gap on mobile */
+    --gap-around-cinematic: 1.0rem;  
+    --gap-before-ending: 2rem;       
+    /* ========================================================= */
+  }
+
+  .floralContainer {
+    margin-bottom: -2.5rem;
+  }
+
+  .floralTop {
+    width: 100%;
+  }
+}
+
+
